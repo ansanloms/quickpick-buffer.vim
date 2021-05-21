@@ -8,28 +8,28 @@ function! quickpick#pickers#buffer#open(bang) abort
   \ "on_accept": function("s:on_accept"),
   \})
 
-  inoremap <buffer><silent> <Plug>(quickpick-buffer-set-open-command-tab) <ESC>:<C-u>call <SID>open_with_command("tab split")<CR>
-  nnoremap <buffer><silent> <Plug>(quickpick-buffer-set-open-command-tab) :<C-u>call <SID>open_with_command("tab split")<CR>
+  inoremap <buffer><silent> <Plug>(quickpick-buffer-open-with-tab) <ESC>:<C-u>call <SID>open_with_command("tab split")<CR>
+  nnoremap <buffer><silent> <Plug>(quickpick-buffer-open-with-tab) :<C-u>call <SID>open_with_command("tab split")<CR>
 
-  inoremap <buffer><silent> <Plug>(quickpick-buffer-set-open-command-split) <ESC>:<C-u>call <SID>open_with_command("split")<CR>
-  nnoremap <buffer><silent> <Plug>(quickpick-buffer-set-open-command-split) :<C-u>call <SID>open_with_command("split")<CR>
+  inoremap <buffer><silent> <Plug>(quickpick-buffer-open-with-split) <ESC>:<C-u>call <SID>open_with_command("split")<CR>
+  nnoremap <buffer><silent> <Plug>(quickpick-buffer-open-with-split) :<C-u>call <SID>open_with_command("split")<CR>
 
-  inoremap <buffer><silent> <Plug>(quickpick-buffer-set-open-command-vsplit) <ESC>:<C-u>call <SID>open_with_command("vsplit")<CR>
-  nnoremap <buffer><silent> <Plug>(quickpick-buffer-set-open-command-vsplit) :<C-u>call <SID>open_with_command("vsplit")<CR>
+  inoremap <buffer><silent> <Plug>(quickpick-buffer-open-with-vsplit) <ESC>:<C-u>call <SID>open_with_command("vsplit")<CR>
+  nnoremap <buffer><silent> <Plug>(quickpick-buffer-open-with-vsplit) :<C-u>call <SID>open_with_command("vsplit")<CR>
 
-  if !hasmapto("<Plug>(quickpick-buffer-set-open-command-tab)")
-    imap <silent> <buffer> <C-t> <Plug>(quickpick-buffer-set-open-command-tab)
-    nmap <silent> <buffer> <C-t> <Plug>(quickpick-buffer-set-open-command-tab)
+  if !hasmapto("<Plug>(quickpick-buffer-open-with-tab)")
+    imap <silent> <buffer> <C-t> <Plug>(quickpick-buffer-open-with-tab)
+    nmap <silent> <buffer> <C-t> <Plug>(quickpick-buffer-open-with-tab)
   endif
 
-  if !hasmapto("<Plug>(quickpick-buffer-set-open-command-split)")
-    imap <silent> <buffer> <C-s> <Plug>(quickpick-buffer-set-open-command-split)
-    nmap <silent> <buffer> <C-s> <Plug>(quickpick-buffer-set-open-command-split)
+  if !hasmapto("<Plug>(quickpick-buffer-open-with-split)")
+    imap <silent> <buffer> <C-s> <Plug>(quickpick-buffer-open-with-split)
+    nmap <silent> <buffer> <C-s> <Plug>(quickpick-buffer-open-with-split)
   endif
 
-  if !hasmapto("<Plug>(quickpick-buffer-set-open-command-vsplit)")
-    imap <silent> <buffer> <C-v> <Plug>(quickpick-buffer-set-open-command-vsplit)
-    nmap <silent> <buffer> <C-v> <Plug>(quickpick-buffer-set-open-command-vsplit)
+  if !hasmapto("<Plug>(quickpick-buffer-open-with-vsplit)")
+    imap <silent> <buffer> <C-v> <Plug>(quickpick-buffer-open-with-vsplit)
+    nmap <silent> <buffer> <C-v> <Plug>(quickpick-buffer-open-with-vsplit)
   endif
 endfunction
 
